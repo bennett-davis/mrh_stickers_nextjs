@@ -1,0 +1,58 @@
+/* Define the main Navigation block */
+.navBar {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+    height: 100px;
+    line-height: 50px;
+    background-color: white;
+    justify-content: space-around;
+    
+}
+/* Remove bullets, margin and padding */
+.navBar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: darkblue;
+    font-size: 30px;
+    font-family: monospace;
+}
+
+.navBar li {
+    padding-top: 20px;
+    display: inline-block;
+    position: relative;
+    color: darkblue;
+}
+
+.navBar li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: darkblue;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .navBar li:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+
+/* Define the block styling for the links */
+.navBar li a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+}
+/* This is optional, however if you want to display the active link differently apply a background to it */
+.navBar li.active {
+    color: #3786E1;
+    
+}
