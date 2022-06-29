@@ -8,6 +8,8 @@
     line-height: 50px;
     background-color: white;
     justify-content: space-around;
+     
+   
     
 }
 /* Remove bullets, margin and padding */
@@ -32,8 +34,8 @@
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 3px;
-    bottom: 0;
+    height: 4px;
+    bottom: -4px;
     left: 0;
     background-color: darkblue;
     transform-origin: center;
@@ -52,7 +54,14 @@
     padding: 14px 16px;
 }
 /* This is optional, however if you want to display the active link differently apply a background to it */
-.navBar li.active {
-    color: #3786E1;
-    
+.navBarActive {
+   border-bottom: 5px solid darkblue;
+   
+}
+
+ 
+
+.navBarli {
+   
+    background-color: transparent;
 }

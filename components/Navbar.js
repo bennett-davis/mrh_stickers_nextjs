@@ -18,15 +18,18 @@ NavItem.propTypes = {
 
 
 export default function Navbar({}){
+
+  const router = useRouter();
+  console.log(router);
   
   return (
   
-    <nav class={styles.navBar}>                                
+    <nav className={styles.navBar}>                                
       {navLinks.map((link, index) =>{
         return (
           <ul>
             <Link href = {link.path}>
-              <li key={index}>{link.name}</li>
+              <li key={link.key.toString()} className={router.route === link.path.toString() ? styles.navBarActive : styles.navBarli} >{link.name}</li>
             </Link>
           </ul>
         );
