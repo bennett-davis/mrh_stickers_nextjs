@@ -1,0 +1,9 @@
+.container {
+    padding: 10px 10px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.main {
+    background-color: red;
+}
