@@ -9,10 +9,10 @@ import { Container, Row, Col } from "reactstrap";
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function Post({ postData }) {
- 
+  console.log( postData);
   return (
     <Layout>
-      
+     
       <Container styles={styles.container}>
       <Row className='w-100 h-100 text-center'>
         <div className='w-50 '>
@@ -20,15 +20,20 @@ export default function Post({ postData }) {
             src={postData.image}
             alt="Mandolorian"
             layout = "responsive"
-            width={794}
-            height={711}
+            width={500}
+            height={500}
           />
         </div>
        <div className='w-50 '>
-       <Container className={styles.container}>
-       <div className='bg-dark'>{postData.description}</div>
+       
 
+        <Container className={styles.stickerDescription}>
+       <div className='bg-dark'>{postData.alt}</div>
+       <div class={styles.title}>Bing Bong</div>
+          <div class={styles.description}>descrioptions bhal bhaal aexampeld eoasdfnkdnfieaf sdf</div>
         </Container>
+        
+      
        </div>
         
       </Row>

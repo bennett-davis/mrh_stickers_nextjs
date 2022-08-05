@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/posts.module.css'
+import styles from '../styles/sticker_design.module.css'
 import Navbar from '../components/Navbar';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
