@@ -5,7 +5,6 @@ export default function Home() {
 
     return( 
         <div>
-            <Navbar />
             <div>Star Wars</div>
         </div>
         )

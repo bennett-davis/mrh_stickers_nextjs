@@ -5,7 +5,6 @@ export default function Home() {
 
     return( 
         <div>
-            <Navbar />
             HELLO BIG CHUNGUS
         </div>)
 

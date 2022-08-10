@@ -36,13 +36,11 @@ export default function Layout({ children, home }) {
 
 
       <header className={styles.container}>
-        <Navbar />
       </header>
 
       <main className={styles.cont}>{children}</main>
 
-     
-       
+    
       <footer className='py-5'>
         <div className='d-flex justify-content-between bg-light py-5'>
           <div className={styles.footerText}>

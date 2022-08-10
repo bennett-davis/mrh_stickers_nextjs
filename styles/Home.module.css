@@ -1,6 +1,7 @@
 .container {
   padding: 0 2rem 2rem;
   background: #252c8a;
+  border-radius: 15px;
 }
 
 .banner{
@@ -15,8 +16,9 @@
 .headerImage{
   padding: 10px;
   padding-top: 20px;
+  
   transition: transform .2s; /* Animation */
-  margin: 0 auto;
+ 
   text-align: center;
   font-size: 25px;
   font-family: sans-serif;
@@ -27,6 +29,23 @@
 
 .headerImage:hover{
   transform: scale(1.1);
+}
+
+.headerImage a {
+  line-height: 50px;
+}
+
+.image {
+  border-radius: 15px;
+ }
+
+.imageShadow {
+  border-radius: 15px;
+  box-shadow: 2px 5px 10px #161616;
+}
+
+.posts {
+  text-align: center;
 }
 
 .main {

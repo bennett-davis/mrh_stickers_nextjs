@@ -13,3 +13,59 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.posts {
+  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image{
+  border-radius: 10px;
+}
+
+
+
+.card-page {
+  padding: 15px 30px;
+}
+
+.post-title {
+  margin: 10px 0;
+}
+
+.post-date {
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+}
+
+.post-body ul,
+ol {
+  font-size: 110%;
+  line-height: 2.3;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.post-body pre {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+}
+
+.row{
+  padding: 40px;
+  
+}
+

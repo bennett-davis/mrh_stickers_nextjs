@@ -2,11 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React from "react"
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import Post from '../components/Post'
 import Navbar from '../components/Navbar';
 import { useState, useCallback, useEffect } from 'react';
 
-import { getAllPostIds, getPostData } from '../lib/posts'
-
+ 
 import { Container, Row, Col } from "reactstrap";
 
 const useMediaQuery = (width) => {
@@ -37,8 +40,7 @@ const useMediaQuery = (width) => {
 
 const Header = () => {
   const isBreakpoint = useMediaQuery(768)
-  console.log("Here is postdata: " + getAllPostIds.length);
-  console.log(params.id);
+   
   return (
       isBreakpoint ? (
        <div className={styles.banner}> 
@@ -70,7 +72,8 @@ const Header = () => {
 
 
 
-export default function Home() {
+export default function Home({posts}) {
+  //console.log(posts);
   return (
     <div >
       <Head>
@@ -83,7 +86,6 @@ export default function Home() {
       
       <main>
         <header >
-          <Navbar />
           <Header />
         </header>
 
@@ -101,33 +103,43 @@ export default function Home() {
           </Container>
           <Row>
             <Col className={styles.headerImage} xs="12" lg="4">
-              <Image 
-                  src="/images/mandol.jpeg"
-                  alt='Header Image'
-                  layout = "responsive"
-                  width={500}
-                  height={500}
-                />
+              <div className={styles.imageShadow}>
+                <Image className={styles.image}
+                    src="/images/mandol.jpeg"
+                    alt='Header Image'
+                    layout = "responsive"
+                    width={500}
+                    height={500}
+                  />
+              </div>
               STAR WARS
             </Col>
             <Col className={styles.headerImage} xs="12" lg="4">
-              <Image 
-                  src="/images/olaf.jpeg"
-                  alt='Header Image'
-                  layout = "responsive"
-                  width={500}
-                  height={500}
-                />
-              DISNEY
+              <div className={styles.imageShadow}>
+                <Image className={styles.image}
+                    src="/images/olaf.jpeg"
+                    alt='Header Image'
+                    layout = "responsive"
+                    width={500}
+                    height={500}
+                  />
+              </div>
+              <a>
+                DISNEY
+              </a>
+              
             </Col>
             <Col className={styles.headerImage} xs="12" lg="4">
-              <Image 
-                  src="/images/turtles.jpg"
-                  alt='Header Image'
-                  layout = "responsive"
-                  width={500}
-                  height={500}
-              />
+              <div className={styles.imageShadow}>
+                <Image className={styles.image}
+                    src="/images/turtles.jpg"
+                    alt='Header Image'
+                    layout = "responsive"
+                    width={500}
+                    height={500}
+                />
+              </div>
+              
               OTHER
             </Col>
           </Row>
@@ -140,7 +152,23 @@ export default function Home() {
         <Container className={styles.title} id="contact"  >
           SHOP ALL STICKERS
         </Container>
-
+    
+       
+        <Row className='row'>
+          <div className='row'>
+          {posts.map((post, index) => (
+                  <Post post={post}/>
+                ))}
+          </div>
+          
+        </Row>
+     
+       
+       
+        
+          
+         
+        
       </main>
 
       <footer className={styles.footer}>
@@ -148,4 +176,34 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps(){
+
+  // gets files from posts directory
+  const files = fs.readdirSync(path.join('posts'))
+
+  // get slug and frontmatter from posts
+  const posts = files.map(filename => {
+    //create slug 
+    const slug = filename.replace('.md', '')
+
+    //get frontmatter
+    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+    // using the matter function, rename data to frontmatter and populate it with the 
+    // data from the markdown file
+    const {data:frontmatter} = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
+  // return the posts from the file map to the home page
+  return {
+    props: {
+      posts,
+    }
+  }
 }

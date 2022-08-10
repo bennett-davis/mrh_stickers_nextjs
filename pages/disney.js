@@ -8,7 +8,6 @@ import { useState, useCallback, useEffect } from 'react';
 export default function Disney(){
     return (
         <div>
-            <Navbar />
             DISNEY
         </div>
     )
