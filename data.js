@@ -1,21 +1,21 @@
 
 export const navLinks = [
-    {   name: "Home", 
+    {   name: "HOME", 
         path: "/" ,
         key: 1,
     },
     {
-        name: "Star Wars",
+        name: "STAR WARS",
         path: "/star_wars",
         key: 2,
     },
     {
-        name: "Disney",
+        name: "DISNEY",
         path: "/disney",
         key: 3,
     },
     {
-        name: "Other",
+        name: "OTHER",
         path: "/other",
         key: 4,
     },

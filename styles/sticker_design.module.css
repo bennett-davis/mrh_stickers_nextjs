@@ -3,7 +3,6 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    
 }
 .main {
     background-color: red;
@@ -11,28 +10,74 @@
 
 .stickerDescription {
     background-color: gray;
-    
     height: 100%;
-  
-     
+}
+
+.imageShadow {
+    border-radius: 15px;
+    box-shadow: 5px 10px 10px #888888;
+}
+
+.imageRadius {
+    border-radius: 15px;
+}
+
+.descriptionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #e4e4e4;
+    border-radius: 15px ;
+}
+
+.containerCenter {
+    align-items: center;
+    display: flex;
 }
 
 .title {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-
+    justify-content: center;
     margin: auto;
     width: 50%;
     font-size: 40px;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
+    font-style: italic;
 }
 
 .description{
     font-size: 22px;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
  
+}
+
+/* .footer {
+    background-color: #f4f4f4;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}  */
+
+/* .footer a {
+     
+    right: 50px;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+}  */
+
+.footerText {
+    padding-left: 50px;
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+.footerText a {
+    text-decoration: none;
+    color: #0a97f5;
 }

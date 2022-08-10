@@ -19,8 +19,8 @@
   margin: 0 auto;
   text-align: center;
   font-size: 25px;
-  font-weight: bold;
-  font-family:monospace;
+  font-family: sans-serif;
+  font-style: italic;
   color: #eaeaea;
 
 }
@@ -73,20 +73,22 @@
   margin-left: auto;
   font-size: 6vw;
   text-align: center;
-  font-family: monospace;
-  font-weight: bold;
+  font-family: sans-serif;
+  font-style: italic;
   object-fit: scale-down;
+  white-space: nowrap;
   color: #eaeaea;
 }
 
 .title {
+  white-space: nowrap;
   margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
   font-size: 6vw;
   text-align: center;
-  font-family: monospace;
-  font-weight: bold;
+  font-family: sans-serif;
+  font-style: italic;
   object-fit: scale-down;
    
 }

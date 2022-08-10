@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { useState, useCallback, useEffect } from 'react';
+import { Container, Row, Col } from "reactstrap";
 
 
 const name = '[Your Name]'
@@ -40,14 +41,27 @@ export default function Layout({ children, home }) {
 
       <main className={styles.cont}>{children}</main>
 
-      {/* footer but not really bc its in a div not a footer*/}
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
+     
+       
+      <footer className='py-5'>
+        <div className='d-flex justify-content-between bg-light py-5'>
+          <div className={styles.footerText}>
+            <a href="/" className='text'>MRH STICKER SHOP</a>
+            </div>
+          
+            <div className="d-flex  pe-5 ">
+              <a href="https://instagram.com/mrhstickershop?igshid=YmMyMTA2M2Y=">
+                <Image
+                  src="/images/insta.png"
+                  layout='fixed'
+                  height={30}
+                  width={30}
+                />
+              </a>
+            </div>
         </div>
-      )}
+      </footer>
     </div>
+   
   )
 }

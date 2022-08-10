@@ -8,8 +8,6 @@
     line-height: 50px;
     background-color: white;
     justify-content: space-around;
-     
-   
     
 }
 /* Remove bullets, margin and padding */
@@ -17,16 +15,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    color: darkblue;
+    color: #0a97f5;
     font-size: 30px;
-    font-family: monospace;
+    font-family: sans-serif;
+    font-style: italic;
 }
 
 .navBar li {
     padding-top: 20px;
     display: inline-block;
     position: relative;
-    color: darkblue;
+    color: #0a97f5;
 }
 
 .navBar li:after {
@@ -37,7 +36,7 @@
     height: 4px;
     bottom: -4px;
     left: 0;
-    background-color: darkblue;
+    background-color: #0a97f5;
     transform-origin: center;
     transition: transform 0.25s ease-out;
   }
@@ -55,7 +54,7 @@
 }
 /* This is optional, however if you want to display the active link differently apply a background to it */
 .navBarActive {
-   border-bottom: 5px solid darkblue;
+   border-bottom: 5px solid #0a97f5;
    
 }
 

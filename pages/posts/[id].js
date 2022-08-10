@@ -9,42 +9,48 @@ import { Container, Row, Col } from "reactstrap";
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function Post({ postData }) {
-  console.log( postData);
+
   return (
+    
     <Layout>
      
       <Container styles={styles.container}>
-      <Row className='w-100 h-100 text-center'>
-        <div className='w-50 '>
-          <Image
+      <Row className='w-100 text-center h-50'>
+        <Col md="6">
+          <div className={styles.imageShadow}>
+          <Image className={styles.imageRadius}
             src={postData.image}
             alt="Mandolorian"
             layout = "responsive"
-            width={500}
-            height={500}
+            width={700}
+            height={700}
           />
-        </div>
-       <div className='w-50 '>
-       
-
-        <Container className={styles.stickerDescription}>
-       <div className='bg-dark'>{postData.alt}</div>
-       <div class={styles.title}>Bing Bong</div>
-          <div class={styles.description}>descrioptions bhal bhaal aexampeld eoasdfnkdnfieaf sdf</div>
-        </Container>
-        
-      
-       </div>
+          </div>
+          
+        </Col>
+        <Col md="6" >
+          <div className='text-dark h-100'>{postData.alt}
+            <div class= {styles.descriptionContainer}>
+              <Col>
+                
+                <div class={styles.title}>{postData.title}</div>
+                <div class={styles.description}>{postData.description}</div>
+                <div>{postData.price}</div>
+                <a class="btn btn-primary" href={postData.link} role="button">BUY NOW</a>
+              
+                
+              </Col>
+            </div>
+          </div>
+        </Col>
         
       </Row>
       </Container>
     
+    
       
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
     </Layout>
+    
   )
 }
 
