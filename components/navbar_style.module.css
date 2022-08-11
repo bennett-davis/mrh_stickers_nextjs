@@ -26,6 +26,7 @@
     display: inline-block;
     position: relative;
     color: #0a97f5;
+    cursor: pointer;
 }
 
 .navBar li:after {

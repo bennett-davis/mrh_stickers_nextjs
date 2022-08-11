@@ -8,27 +8,32 @@ export default function Post({post}){
          
         <Col xs="12" lg="3">
         <div className='col py-3'>
-            <div class='card p-0 '>
-                
-                <Image className='image'
-                    src={post.frontmatter.image}
-                    alt="oesnt matter"
-                    layout="responsive"
-                    width={500}
-                    height={500}
-                />
-            {/*} <img src={post.frontmatter.image} alt='' /> */}
-                <div>
-                    {post.frontmatter.price}
-                </div>
-                {post.frontmatter.description}
+        <Link href={`/posts/${post.slug}`}>
+            <div>
+                <div className='imageShadow'>
+                    
+                    <Image className='image'
+                        src={post.frontmatter.image}
+                        alt="oesnt matter"
+                        layout="responsive"
+                        width={500}
+                        height={500}
+                    />
+                    </div >
+                    <div className='post-details'>
+                        <div className='post-title'>{post.frontmatter.title}</div>
+                        <div className='post-description'>{post.frontmatter.description}</div>
+                        <div className='post-price'>{post.frontmatter.price}</div>
+                    </div>
+                    
 
-                <Link href={`/posts/${post.slug}`}>
-                    <a className='btn'>Read More</a>
-                </Link>
+                    
+                        
+                </div> 
                 
-                
-            </div>
+               
+            
+            </Link>
         </div>
        
         </Col>

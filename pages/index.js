@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/Post'
+import Link from 'next/link'
 import Navbar from '../components/Navbar';
 import { useState, useCallback, useEffect } from 'react';
 
@@ -92,7 +93,9 @@ export default function Home({posts}) {
         <div className='padding'>
         <style jsx>{`
           .padding {
-            padding: 30px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
           }
         `}
           
@@ -102,46 +105,50 @@ export default function Home({posts}) {
             SHOP BY FANDOM
           </Container>
           <Row>
-            <Col className={styles.headerImage} xs="12" lg="4">
-              <div className={styles.imageShadow}>
-                <Image className={styles.image}
-                    src="/images/mandol.jpeg"
-                    alt='Header Image'
-                    layout = "responsive"
-                    width={500}
-                    height={500}
-                  />
-              </div>
-              STAR WARS
-            </Col>
-            <Col className={styles.headerImage} xs="12" lg="4">
-              <div className={styles.imageShadow}>
-                <Image className={styles.image}
-                    src="/images/olaf.jpeg"
-                    alt='Header Image'
-                    layout = "responsive"
-                    width={500}
-                    height={500}
-                  />
-              </div>
-              <a>
+            <Link href='/star_wars'>
+              <Col className={styles.headerImage} xs="12" lg="4">
+                <div className={styles.imageShadow}>
+                  <Image className={styles.image}
+                      src="/images/mandol.jpeg"
+                      alt='Header Image'
+                      layout = "responsive"
+                      width={500}
+                      height={500}
+                    />
+                </div>
+                STAR WARS
+              </Col>
+            </Link>
+            <Link href="/disney">
+              <Col className={styles.headerImage} xs="12" lg="4">
+                <div className={styles.imageShadow}>
+                  <Image className={styles.image}
+                      src="/images/olaf.jpeg"
+                      alt='Header Image'
+                      layout = "responsive"
+                      width={500}
+                      height={500}
+                    />
+                </div>
                 DISNEY
-              </a>
-              
-            </Col>
-            <Col className={styles.headerImage} xs="12" lg="4">
-              <div className={styles.imageShadow}>
-                <Image className={styles.image}
-                    src="/images/turtles.jpg"
-                    alt='Header Image'
-                    layout = "responsive"
-                    width={500}
-                    height={500}
-                />
-              </div>
-              
-              OTHER
-            </Col>
+              </Col>
+            </Link>
+            <Link href="/other">
+              <Col className={styles.headerImage} xs="12" lg="4">
+                <div className={styles.imageShadow}>
+                  <Image className={styles.image}
+                      src="/images/turtles.jpg"
+                      alt='Header Image'
+                      layout = "responsive"
+                      width={500}
+                      height={500}
+                  />
+                </div>
+                
+                OTHER
+              </Col>  
+            </Link>
+           
           </Row>
         </div>
 
@@ -154,8 +161,9 @@ export default function Home({posts}) {
         </Container>
     
        
-        <Row className='row'>
+        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
           <div className='row'>
+            
           {posts.map((post, index) => (
                   <Post post={post}/>
                 ))}

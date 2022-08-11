@@ -14,6 +14,10 @@ a {
   box-sizing: border-box;
 }
 
+.price{
+   font-size: 20px;
+}
+
 .posts {
   
   display: grid;
@@ -23,30 +27,53 @@ a {
   justify-content: center;
 }
 
-.card {
-  padding: 15px;
-  border-radius: 20px;
-  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+ 
 
 .image{
-  border-radius: 10px;
+  border-radius: 15px;
+  transition: transform .2s;
+  background-size: cover;
+ 
+ }
+
+ 
+
+ .imageShadow{
+  box-shadow: 2px 5px 7px #828282;
+  border-radius: 15px;
+  position:relative;
+  z-index:1;
+  overflow: hidden;
+ }
+
+.image:hover {
+  transform: scale(1.1);
 }
-
-
 
 .card-page {
   padding: 15px 30px;
 }
 
-.post-title {
-  margin: 10px 0;
+.card {
+  padding: 10px;
 }
 
-.post-date {
-  background: #f4f4f4;
-  margin-bottom: 20px;
-  padding: 3px 10px;
+.post-title {
+  font-weight: bold;
+  padding-top: 5px;
+  font-size: large;
+}
+
+.post-price {
+  font-weight: 500;
+}
+
+.post-description {
+  line-height: 18px;
+}
+
+.post-details {
+  padding-left: 15px;
 }
 
 .post-body ul,
@@ -65,7 +92,7 @@ ol {
 }
 
 .row{
-  padding: 40px;
+  padding: 10px 40px 20px 40px;
   
 }
 

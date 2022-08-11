@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem 2rem;
+  padding: 0px 20px;
   background: #252c8a;
   border-radius: 15px;
 }
@@ -14,17 +14,14 @@
 }
 
 .headerImage{
-  padding: 10px;
-  padding-top: 20px;
-  
   transition: transform .2s; /* Animation */
- 
   text-align: center;
   font-size: 25px;
   font-family: sans-serif;
   font-style: italic;
   color: #eaeaea;
-
+  cursor: pointer;
+  
 }
 
 .headerImage:hover{
@@ -33,6 +30,7 @@
 
 .headerImage a {
   line-height: 50px;
+  
 }
 
 .image {
@@ -86,11 +84,12 @@
   text-decoration: underline;
 }
 
+
+/* SHOP BY FANDOM */
 .title1 {
-  margin-top: 3%;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 6vw;
+  padding-top: 10px;
+  margin-top: 1%;
+  font-size: 4vw;
   text-align: center;
   font-family: sans-serif;
   font-style: italic;
@@ -99,15 +98,17 @@
   color: #eaeaea;
 }
 
+/* SHOP ALL STICKERS */
 .title {
   white-space: nowrap;
-  margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
-  font-size: 6vw;
+  padding-top: 20px;
+  font-size: 4vw;
   text-align: center;
   font-family: sans-serif;
   font-style: italic;
+  font-weight: bold;
   object-fit: scale-down;
    
 }
