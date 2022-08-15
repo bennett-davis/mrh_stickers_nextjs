@@ -5,7 +5,9 @@ import React from "react"
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Post from '../components/Post'
+import StarWarsPost from '../components/starWarsPost'
+import DisneyPost from '../components/DisneyPost'
+import OtherPost from '../components/OtherPost'
 import Link from 'next/link'
 import Navbar from '../components/Navbar';
 import { useState, useCallback, useEffect } from 'react';
@@ -73,8 +75,8 @@ const Header = () => {
 
 
 
-export default function Home({posts}) {
-  //console.log(posts);
+export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
+  
   return (
     <div >
       <Head>
@@ -164,8 +166,28 @@ export default function Home({posts}) {
         <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
           <div className='row'>
             
-          {posts.map((post, index) => (
-                  <Post post={post}/>
+          {starWarsPosts.map((post, index) => (
+                  <StarWarsPost post={post}/>
+                ))}
+          </div>
+          
+        </Row>
+
+        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
+          <div className='row'>
+            
+          {disneyPosts.map((post, index) => (
+                  <DisneyPost post={post}/>
+                ))}
+          </div>
+          
+        </Row>
+
+        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
+          <div className='row'>
+            
+          {otherPosts.map((post, index) => (
+                  <OtherPost post={post}/>
                 ))}
           </div>
           
@@ -189,29 +211,68 @@ export default function Home({posts}) {
 export async function getStaticProps(){
 
   // gets files from posts directory
-  const files = fs.readdirSync(path.join('posts'))
+  let disneyFile = fs.readdirSync(path.join('posts/disney'));
+  let starWarsFile = fs.readdirSync(path.join('posts/star_wars'));
+  let otherFile = fs.readdirSync(path.join('posts/other'));
+  
 
   // get slug and frontmatter from posts
-  const posts = files.map(filename => {
+  const disneyPosts = disneyFile.map(filename => {
     //create slug 
     const slug = filename.replace('.md', '')
-
+    
     //get frontmatter
-    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.join('posts/disney', filename), 'utf-8')
     // using the matter function, rename data to frontmatter and populate it with the 
     // data from the markdown file
     const {data:frontmatter} = matter(markdownWithMeta)
-
+    
     return {
       slug,
       frontmatter
     }
   })
 
+  const starWarsPosts = starWarsFile.map(filename => {
+    //create slug 
+    const slug = filename.replace('.md', '')
+
+    //get frontmatter
+    const markdownWithMeta = fs.readFileSync(path.join('posts/star_wars', filename), 'utf-8')
+    // using the matter function, rename data to frontmatter and populate it with the 
+    // data from the markdown file
+    const {data:frontmatter} = matter(markdownWithMeta)
+    
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
+  const otherPosts = otherFile.map(filename => {
+    //create slug 
+    const slug = filename.replace('.md', '')
+
+    //get frontmatter
+    const markdownWithMeta = fs.readFileSync(path.join('posts/other', filename), 'utf-8')
+    // using the matter function, rename data to frontmatter and populate it with the 
+    // data from the markdown file
+    const {data:frontmatter} = matter(markdownWithMeta)
+    
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
+
+  
   // return the posts from the file map to the home page
   return {
     props: {
-      posts,
+      disneyPosts,
+      starWarsPosts,
+      otherPosts,
     }
   }
 }

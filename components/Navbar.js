@@ -20,7 +20,7 @@ NavItem.propTypes = {
 export default function Navbar({}){
 
   const router = useRouter();
-  console.log(router);
+ 
   
   return (
   
