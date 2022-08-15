@@ -5,12 +5,13 @@ import styles from "../../../styles/sticker_design.module.css"
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+import PostPage from '../../../components/PostPage'
 
  
 import { Container, Row, Col } from "reactstrap";
 
  
-export default function OtherPost({ 
+export default function Home({ 
   frontmatter: { title, image, link , price, description},
   slug,
   content,
@@ -20,38 +21,9 @@ export default function OtherPost({
     
     <Layout>
      
-      <Container styles={styles.container}>
-      <Row className='w-100 text-center h-50'>
-        <Col md="6">
-          <div className={styles.imageShadow}>
-          <Image className={styles.imageRadius}
-            src={image}
-            alt="Mandolorian"
-            layout = "responsive"
-            width={700}
-            height={700}
-          />
-          </div>
-          
-        </Col>
-        <Col md="6" >
-          <div className='text-dark h-100'>
-            <div class= {styles.descriptionContainer}>
-              <Col>
-                
-                <div class={styles.title}>{title}</div>
-                <div class={styles.description}>{description}</div>
-                <div>{price}</div>
-                <a class="btn btn-primary" href={link} role="button">BUY NOW</a>
-              
-                
-              </Col>
-            </div>
-          </div>
-        </Col>
-        
-      </Row>
-      </Container>
+     <Layout>
+      <PostPage props = {{title, image, link , price, description}}/>
+    </Layout>
     
     
       

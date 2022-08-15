@@ -76,7 +76,7 @@ const Header = () => {
 
 
 export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
-  
+
   return (
     <div >
       <Head>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Container, Row, Col } from 'reactstrap';
 
 export default function DisneyPost({post}){
-  console.log("POST SLUG " + post.slug);
+  
     return (
          
         <Col xs="12" lg="3">
