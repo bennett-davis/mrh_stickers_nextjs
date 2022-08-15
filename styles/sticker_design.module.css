@@ -4,9 +4,7 @@
     margin-right: auto;
     margin-left: auto;
 }
-.main {
-    background-color: red;
-}
+
 
 .stickerDescription {
     background-color: gray;
@@ -30,6 +28,18 @@
     width: 100%;
     background-color: #e4e4e4;
     border-radius: 15px ;
+    font-family: sans-serif;
+}
+
+.buyButton a {
+    padding: 10px 60px;
+ }
+
+.buyButton{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    align-items: flex-end;
 }
 
 .containerCenter {
@@ -37,23 +47,27 @@
     display: flex;
 }
 
+.price {
+    font-size: large;
+    font-weight: bold;
+ }
+
 .title {
     justify-content: center;
     margin: auto;
     width: 50%;
     font-size: 40px;
-    font-family: sans-serif;
     font-style: italic;
+    font-weight: bold;
 }
 
 .description{
-    font-size: 22px;
+    font-size: 20px;
     display: flex;
-    margin: 10px 10px;
+    margin: 0px 10px;
     justify-content: center;
     align-items: center;
- 
-}
+ }
 
 /* .footer {
     background-color: #f4f4f4;

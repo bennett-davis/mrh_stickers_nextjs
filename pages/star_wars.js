@@ -12,7 +12,7 @@ export default function Home({posts}) {
 
     return( 
         <div>
-            <div>Star Wars</div>
+           {/* <div>Star Wars</div> */} 
             <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
             <div className='row'>
                 
