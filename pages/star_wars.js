@@ -26,7 +26,10 @@ export default function Home({posts}) {
             <div className='row'>
                 
             {posts.map((post, index) => (
-                    <StarWarsPost post={post}/>
+              
+                <StarWarsPost post={post}  key={index}/>
+              
+                    
                     ))}
             </div>
             

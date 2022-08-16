@@ -167,7 +167,10 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           <div className='row'>
             
           {starWarsPosts.map((post, index) => (
-                  <StarWarsPost post={post}/>
+           
+              <StarWarsPost post={post} key={index}/>
+         
+                  
                 ))}
           </div>
           
@@ -177,7 +180,10 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           <div className='row'>
             
           {disneyPosts.map((post, index) => (
-                  <DisneyPost post={post}/>
+            
+               <DisneyPost post={post}  key={index}/>
+           
+                 
                 ))}
           </div>
           
@@ -187,7 +193,10 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           <div className='row'>
             
           {otherPosts.map((post, index) => (
-                  <OtherPost post={post}/>
+            
+              <OtherPost post={post}  key={index}/>
+           
+                  
                 ))}
           </div>
           

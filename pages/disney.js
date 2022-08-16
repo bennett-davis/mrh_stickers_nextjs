@@ -25,7 +25,7 @@ export default function Home({posts}) {
                 
             {posts.map((post, index) => (
              
-                    <DisneyPost  post={post}/>
+                    <DisneyPost  post={post}  key={index}/>
                     
                     ))}
 
