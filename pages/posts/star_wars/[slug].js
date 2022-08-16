@@ -15,7 +15,7 @@ export default function Home({
   frontmatter: { title, image, link , price, description},
   slug,
   content,}) {
-   console.log(title);
+   
   return (
     
     <Layout>

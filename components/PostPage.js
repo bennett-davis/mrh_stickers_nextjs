@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 
 export default function PostPage({props}){
-    console.log(props.title);
+   
     return (
 <Container styles={styles.container}>
       <Row className='w-100 text-center h-50'>
