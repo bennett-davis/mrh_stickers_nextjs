@@ -7,7 +7,7 @@ export default function StarWarsPost({post}){
   
     return (
          
-        <Col xs="12" lg="3">
+        <Col xs="12" lg="3" key={post.id}>
             <div className='col py-3'>
                 <Link href={`/posts/star_wars/${post.slug}`}>
                     <div>
