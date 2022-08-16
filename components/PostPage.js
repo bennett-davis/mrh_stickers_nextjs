@@ -22,13 +22,13 @@ export default function PostPage({props}){
         </Col>
         <Col md="6" >
           <div className='text-dark h-100'>
-            <div class= {styles.descriptionContainer}>
+            <div className= {styles.descriptionContainer}>
               <Col>
-                <div class={styles.title}>{props.title}</div>
-                <div class={styles.description}>{props.description}</div>
-                <div class={styles.price}>{props.price}</div>
-                <div class={styles.buyButton}>
-                    <a class="btn btn-primary" href={props.link} target="_blank" role="button">BUY NOW</a>
+                <div className={styles.title}>{props.title}</div>
+                <div className={styles.description}>{props.description}</div>
+                <div className={styles.price}>{props.price}</div>
+                <div className={styles.buyButton}>
+                    <a className="btn btn-primary" href={props.link} target="_blank" role="button">BUY NOW</a>
                 </div>
               </Col>
             </div>
