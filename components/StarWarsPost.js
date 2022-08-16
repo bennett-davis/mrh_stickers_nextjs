@@ -14,7 +14,7 @@ export default function StarWarsPost({post}){
                         <div className='imageShadow'>
                             <Image className='image'
                                 src={post.frontmatter.image}
-                                alt="oesnt matter"
+                                alt={post.frontmatter.description}
                                 layout="responsive"
                                 width={500}
                                 height={500}
