@@ -1,12 +1,14 @@
 import { Container, Row, Col } from 'reactstrap';
 import styles from '/styles/sticker_design.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function PostPage({props}){
    
     return (
-<Container styles={styles.container}>
+      <div key={props.id}>
+      <Container styles={styles.container}>
       <Row className='w-100 text-center h-50'>
         <Col md="6">
           <div className={styles.imageShadow}>
@@ -28,7 +30,10 @@ export default function PostPage({props}){
                 <div className={styles.description}>{props.description}</div>
                 <div className={styles.price}>{props.price}</div>
                 <div className={styles.buyButton}>
-                    <a className="btn btn-primary" href={props.link} target="_blank" role="button">BUY NOW</a>
+                  
+                    <Link href={props.link}role="button">BUY NOW</Link>
+                  
+                    
                 </div>
               </Col>
             </div>
@@ -37,6 +42,8 @@ export default function PostPage({props}){
         
       </Row>
       </Container>
+      </div>
+
     )
     
 }

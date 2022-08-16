@@ -51,6 +51,7 @@ export default function Layout({ children, home }) {
               <a href="https://instagram.com/mrhstickershop?igshid=YmMyMTA2M2Y=">
                 <Image
                   src="/images/insta.png"
+                  alt="Instagram logo"
                   layout='fixed'
                   height={30}
                   width={30}
