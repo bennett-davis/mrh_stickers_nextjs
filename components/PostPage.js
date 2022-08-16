@@ -28,7 +28,7 @@ export default function PostPage({props}){
                 <div class={styles.description}>{props.description}</div>
                 <div class={styles.price}>{props.price}</div>
                 <div class={styles.buyButton}>
-                    <a class="btn btn-primary" href={props.link} role="button">BUY NOW</a>
+                    <a class="btn btn-primary" href={props.link} target="_blank" role="button">BUY NOW</a>
                 </div>
               </Col>
             </div>

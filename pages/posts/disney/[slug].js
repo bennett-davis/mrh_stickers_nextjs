@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from "react"
 import Layout from "../../../components/layout"
 import styles from "../../../styles/sticker_design.module.css"
+import Head from 'next/head'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -19,15 +20,21 @@ export default function DisneyPost({
   
   return (
     
-    <Layout>
+    
      
      <Layout>
+      <Head>
+            <title>MRH Sticker Shop</title>
+            <meta name="description" content="MRH Sticker Shop Sticker Page" />
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+          </Head>
       <PostPage props = {{title, image, link , price, description}}/>
     </Layout>
     
     
       
-    </Layout>
+    
     
   )
 }

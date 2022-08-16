@@ -1,5 +1,6 @@
 import { Nav } from "reactstrap"
 import Navbar from "../components/Navbar"
+import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -11,7 +12,15 @@ import { Container, Row, Col } from "reactstrap";
 export default function Home({posts}) {
 
     return( 
+
+      
         <div>
+          <Head>
+            <title>MRH Sticker Shop</title>
+            <meta name="description" content="MRH Sticker Shop Star Wars Page" />
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+          </Head>
            {/* <div>Star Wars</div> */} 
             <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
             <div className='row'>

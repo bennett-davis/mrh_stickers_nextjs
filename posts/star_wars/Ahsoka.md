@@ -2,7 +2,7 @@
 title: "Ahsoka"
 id: "Ahsoka"
 image: "/images/star_wars/Ahsoka.jpg"
-link: "https://square.link/u/x0h8KbCZ"
+link: "https://square.link/u/gIZigyOx"
 price: "$5.00"
-description: "AHSOKA (CLONE WARS SEASON 7) VINYL STICKER | 3\""
+description: "AHSOKA PADAWAN VINYL STICKER | 3\""
 ---
