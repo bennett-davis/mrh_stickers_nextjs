@@ -4,8 +4,10 @@
   "os": false
 },
   "name": "mrh_sticker_shop",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.0","engines": {
+    "node": "16.x"
+  },
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
