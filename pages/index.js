@@ -5,7 +5,7 @@ import React from "react"
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import StarWarsPost from '../components/starWarsPost'
+import StarWarsPost from '../components/StarWarsPost'
 import DisneyPost from '../components/DisneyPost'
 import OtherPost from '../components/OtherPost'
 import Link from 'next/link'
