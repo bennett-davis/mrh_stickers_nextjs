@@ -15,50 +15,50 @@ import { useState, useCallback, useEffect } from 'react';
  
 import { Container, Row, Col } from "reactstrap";
 
-const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
+// const useMediaQuery = (width) => {
+//   const [targetReached, setTargetReached] = useState(false);
 
-  const updateTarget = useCallback((e) => {
-    if (e.matches) {
-      setTargetReached(true);
-    } else {
-      setTargetReached(false);
-    }
-  }, []);
+//   const updateTarget = useCallback((e) => {
+//     if (e.matches) {
+//       setTargetReached(true);
+//     } else {
+//       setTargetReached(false);
+//     }
+//   }, []);
 
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    media.addListener(updateTarget);
+//   useEffect(() => {
+//     const media = window.matchMedia(`(max-width: ${width}px)`);
+//     media.addListener(updateTarget);
 
-    // Check on mount (callback is not called until a change occurs)
-    if (media.matches) {
-      setTargetReached(true);
-    }
+//     // Check on mount (callback is not called until a change occurs)
+//     if (media.matches) {
+//       setTargetReached(true);
+//     }
 
-    return () => media.removeListener(updateTarget);
-  }, []);
+//     return () => media.removeListener(updateTarget);
+//   }, []);
 
-  return targetReached;
-};
+//   return targetReached;
+// };
 
 const Header = () => {
-  const isBreakpoint = useMediaQuery(768)
+  // const isBreakpoint = useMediaQuery(768)
    
   return (
-      isBreakpoint ? (
-       <div className={styles.banner}> 
-          <Image
-          src="/images/header_mobile.jpg"
-          alt='Header Image'
-          layout = "responsive"
-          width={825}
-          height={825}
+    //   isBreakpoint ? (
+    //    <div className={styles.banner}> 
+    //       <Image
+    //       src="/images/header_mobile.jpg"
+    //       alt='Header Image'
+    //       layout = "responsive"
+    //       width={825}
+    //       height={825}
           
-          />
-       </div>
-     ) 
-     : 
-     (
+    //       />
+    //    </div>
+    //  ) 
+    //  : 
+    //  (
       <div className={styles.banner}>
         <Image
         src="/images/header2.jpg"
@@ -69,7 +69,7 @@ const Header = () => {
         priority={true}
         />
       </div>
-    )
+ //   )
 )}
 
 

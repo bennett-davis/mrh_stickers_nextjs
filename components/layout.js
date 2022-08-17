@@ -44,11 +44,11 @@ export default function Layout({ children, home }) {
       <footer className='py-5'>
         <div className='d-flex justify-content-between bg-light py-5'>
           <div className={styles.footerText}>
-            <a href="/" className='text'>MRH STICKER SHOP</a>
+            <Link href="/" className='text'>MRH STICKER SHOP</Link>
             </div>
           
             <div className="d-flex  pe-5 ">
-              <a href="https://instagram.com/mrhstickershop?igshid=YmMyMTA2M2Y=">
+              <Link href="https://instagram.com/mrhstickershop?igshid=YmMyMTA2M2Y=">
                 <Image
                   src="/images/insta.png"
                   alt="Instagram logo"
@@ -56,7 +56,7 @@ export default function Layout({ children, home }) {
                   height={30}
                   width={30}
                 />
-              </a>
+              </Link>
             </div>
         </div>
       </footer>
