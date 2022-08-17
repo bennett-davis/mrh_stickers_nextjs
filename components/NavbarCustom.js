@@ -2,7 +2,7 @@
 // import styles from '../styles/Home.module.css';
 import styles from './navbar_style.module.css';
 import Link from 'next/link';
-import React from "react";
+import React from 'react';
 import { navLinks } from '../data';
 import { useRouter } from 'next/router';
 import propTypes from "prop-types";
@@ -17,26 +17,29 @@ NavItem.propTypes = {
 };
 
 
-export default function Navbar({}){
+export default function NavbarCustom({}){
 
   const router = useRouter();
- 
   
   return (
   
     <nav className={styles.navBar}>                                
-      {navLinks.map((link, index) =>{
+        {navLinks.map((link, index) =>{
         return (
-          <ul key={index}>
+            <ul key={index}>
             <Link href = {link.path}>
-              <li key={link.key.toString()} className={router.route === link.path.toString() ? styles.navBarActive : styles.navBarli} >{link.name}</li>
+                <li key={link.key.toString()} className={router.route === link.path.toString() ? styles.navBarActive : styles.navBarli} >{link.name}</li>
             </Link>
-          </ul>
+            </ul>
         );
-      }
-      )}
+        }
+        )}
     </nav>
-
+      
   )
+
+    
+
+
 }
 

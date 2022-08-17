@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from '../components/Navbar';
+import NavbarCustom from '../components/NavbarCustom';
 
 
 
@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Navbar/>
+      <NavbarCustom/>
       <Component {...pageProps} />
     </>
   )

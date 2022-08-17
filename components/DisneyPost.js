@@ -7,7 +7,7 @@ export default function DisneyPost({post}){
   
     return (
          
-        <Col xs="12" lg="3" >
+        <Col xs="6" lg="3" >
             <div className='col py-3'>
                 <Link href={`/posts/disney/${post.slug}`}>
                     <div>

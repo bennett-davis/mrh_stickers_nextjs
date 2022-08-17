@@ -9,7 +9,6 @@ import StarWarsPost from '../components/StarWarsPost'
 import DisneyPost from '../components/DisneyPost'
 import OtherPost from '../components/OtherPost'
 import Link from 'next/link'
-import Navbar from '../components/Navbar';
 import { useState, useCallback, useEffect } from 'react';
 
  
@@ -162,34 +161,31 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           SHOP ALL STICKERS
         </Container>
     
-       
-        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
-          <div className='row'>
-            
-          {starWarsPosts.map((post, index) => (
-           
-              <StarWarsPost post={post} key={index}/>
-         
-                  
+     
+          <Row className='row' >
+              <div className='row post'> 
+                {starWarsPosts.map((post, index) => (
+                    <StarWarsPost post={post} key={index}/>
                 ))}
-          </div>
-          
-        </Row>
+              </div>
+              
+          </Row>
+       
+       
 
-        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
+        <Row className='row' style={{padding:"0rem 5rem", cursor: "pointer"}}>
           <div className='row'>
             
           {disneyPosts.map((post, index) => (
             
                <DisneyPost post={post}  key={index}/>
-           
-                 
+   
                 ))}
           </div>
           
         </Row>
 
-        <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
+        <Row className='row' style={{padding:"0px 5rem", cursor: "pointer"}}>
           <div className='row'>
             
           {otherPosts.map((post, index) => (
@@ -201,6 +197,8 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           </div>
           
         </Row>
+       
+       
      
        
        

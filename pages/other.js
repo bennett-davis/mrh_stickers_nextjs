@@ -1,5 +1,4 @@
 import { Nav } from "reactstrap"
-import Navbar from "../components/Navbar"
 import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
