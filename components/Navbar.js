@@ -27,7 +27,7 @@ export default function Navbar({}){
     <nav className={styles.navBar}>                                
       {navLinks.map((link, index) =>{
         return (
-          <ul>
+          <ul key={index}>
             <Link href = {link.path}>
               <li key={link.key.toString()} className={router.route === link.path.toString() ? styles.navBarActive : styles.navBarli} >{link.name}</li>
             </Link>
