@@ -1,5 +1,5 @@
 .container {
-  padding: 0px 1rem;
+  padding: 0px 3rem;
   background: #252c8a;
   border-radius: 15px;
 }
@@ -8,18 +8,9 @@
   padding: 0px;
 }
 
-@media (max-width: 800px) {
-
-  .post{
-    padding: 0rem 0rem;
-  }
-
+.padding {
+  padding: 0rem 2rem;
 }
-
-.post {
-  padding: 0rem 4rem;
-}
-
 
 .nonActiveNav{
   color: purple;
@@ -27,6 +18,7 @@
 }
 
 .headerImage{
+  
   transition: transform .2s; /* Animation */
   text-align: center;
   font-size: 25px;
@@ -34,7 +26,6 @@
   font-style: italic;
   color: #eaeaea;
   cursor: pointer;
-  
 }
 
 .headerImage:hover{
@@ -48,15 +39,12 @@
 
 .image {
   border-radius: 15px;
+   
  }
 
 .imageShadow {
   border-radius: 15px;
   box-shadow: 2px 5px 10px #161616;
-}
-
-.posts {
-  text-align: center;
 }
 
 .main {
@@ -100,15 +88,18 @@
 
 /* SHOP BY FANDOM */
 .title1 {
-  padding-top: 10px;
-  margin-top: 1%;
-  font-size: 4vw;
+  padding: 1rem 0rem;
   text-align: center;
   font-family: sans-serif;
   font-style: italic;
   object-fit: scale-down;
   white-space: nowrap;
   color: #eaeaea;
+}
+
+.title1 h1 {
+  padding: 0px;
+  text-align: center;
 }
 
 /* SHOP ALL STICKERS */
@@ -123,8 +114,31 @@
   font-style: italic;
   font-weight: bold;
   object-fit: scale-down;
-   
 }
+
+.h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 75px;
+ }
+
+.h2 {
+  text-align: center;
+  padding-top: 1rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.posts {
+  text-align: center;
+}
+
+.post {
+  padding: 0rem 4rem;
+  justify-content: center;
+}
+
+
 
 .description {
   text-align: center;
@@ -188,11 +202,28 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
 
+@media (max-width: 800px) {
+
+  .post{
+    padding: 0rem 1rem;
+  }
+
+  .headerImage {
+    padding: 0rem 1rem;
+  }
+
+  .container{
+    padding: 0rem 1rem;
+  }
+
+  .padding{
+    padding: 0rem 1rem;
+  }
+
+  .h1 {
+    font-size: 30px;
+  }
+
+}
 

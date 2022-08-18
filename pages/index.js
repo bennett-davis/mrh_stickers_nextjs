@@ -14,50 +14,50 @@ import { useState, useCallback, useEffect } from 'react';
  
 import { Container, Row, Col } from "reactstrap";
 
-// const useMediaQuery = (width) => {
-//   const [targetReached, setTargetReached] = useState(false);
+const useMediaQuery = (width) => {
+  const [targetReached, setTargetReached] = useState(false);
 
-//   const updateTarget = useCallback((e) => {
-//     if (e.matches) {
-//       setTargetReached(true);
-//     } else {
-//       setTargetReached(false);
-//     }
-//   }, []);
+  const updateTarget = useCallback((e) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
 
-//   useEffect(() => {
-//     const media = window.matchMedia(`(max-width: ${width}px)`);
-//     media.addListener(updateTarget);
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addListener(updateTarget);
 
-//     // Check on mount (callback is not called until a change occurs)
-//     if (media.matches) {
-//       setTargetReached(true);
-//     }
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
 
-//     return () => media.removeListener(updateTarget);
-//   }, []);
+    return () => media.removeListener(updateTarget);
+  }, []);
 
-//   return targetReached;
-// };
+  return targetReached;
+};
 
 const Header = () => {
-  // const isBreakpoint = useMediaQuery(768)
+  const isBreakpoint = useMediaQuery(768)
    
   return (
-    //   isBreakpoint ? (
-    //    <div className={styles.banner}> 
-    //       <Image
-    //       src="/images/header_mobile.jpg"
-    //       alt='Header Image'
-    //       layout = "responsive"
-    //       width={825}
-    //       height={825}
+      isBreakpoint ? (
+       <div className={styles.banner}> 
+          <Image
+          src="/images/header_mobile.jpg"
+          alt='Header Image'
+          layout = "responsive"
+          width={825}
+          height={825}
           
-    //       />
-    //    </div>
-    //  ) 
-    //  : 
-    //  (
+          />
+       </div>
+     ) 
+     : 
+     (
       <div className={styles.banner}>
         <Image
         src="/images/header2.jpg"
@@ -68,7 +68,7 @@ const Header = () => {
         priority={true}
         />
       </div>
- //   )
+    )
 )}
 
 
@@ -91,121 +91,99 @@ export default function Home({ disneyPosts, starWarsPosts, otherPosts}) {
           <Header />
         </header>
 
-        <div className='padding'>
-        <style jsx>{`
-          .padding {
-            padding-left: 40px;
-            padding-right: 40px;
-            padding-top: 20px;
-          }
-        `}
-          
-        </style>
-        <div className={styles.container}> 
-          <Container className={styles.title1} >
-            SHOP BY FANDOM
-          </Container>
-          <Row>
-            <Link href='/star_wars'>
-              <Col className={styles.headerImage} xs="12" lg="4">
-                <div className={styles.imageShadow}>
-                  <Image className={styles.image}
-                      src="/images/star_wars/Mando3inHolo.jpg"
-                      alt='Header Image'
-                      layout = "responsive"
-                      width={500}
-                      height={500}
+        <div className={styles.padding}>
+        
+          <div className={styles.container}> 
+            <Container className={styles.title1} >
+              <h1>SHOP BY FANDOM</h1>
+            </Container>
+            <Row className={styles.headerRow}>
+              <Link href='/star_wars'>
+                <Col className={styles.headerImage} xs="12" lg="4">
+                  <div className={styles.imageShadow}>
+                    <Image className={styles.image}
+                        src="/images/star_wars/Mando3inHolo.jpg"
+                        alt='Header Image'
+                        layout = "responsive"
+                        width={500}
+                        height={500}
+                      />
+                  </div>
+                  STAR WARS
+                </Col>
+              </Link>
+              <Link href="/disney">
+                <Col className={styles.headerImage} xs="12" lg="4">
+                  <div className={styles.imageShadow}>
+                    <Image className={styles.image}
+                        src="/images/disney/Ariel3in.jpg"
+                        alt='Header Image'
+                        layout = "responsive"
+                        width={500}
+                        height={500}
+                      />
+                  </div>
+                  DISNEY
+                </Col>
+              </Link>
+              <Link href="/other">
+                <Col className={styles.headerImage} xs="12" lg="4">
+                  <div className={styles.imageShadow}>
+                    <Image className={styles.image}
+                        src="/images/other/BlackPanther.jpg"
+                        alt='Header Image'
+                        layout = "responsive"
+                        width={500}
+                        height={500}
                     />
-                </div>
-                STAR WARS
-              </Col>
-            </Link>
-            <Link href="/disney">
-              <Col className={styles.headerImage} xs="12" lg="4">
-                <div className={styles.imageShadow}>
-                  <Image className={styles.image}
-                      src="/images/disney/Ariel3in.jpg"
-                      alt='Header Image'
-                      layout = "responsive"
-                      width={500}
-                      height={500}
-                    />
-                </div>
-                DISNEY
-              </Col>
-            </Link>
-            <Link href="/other">
-              <Col className={styles.headerImage} xs="12" lg="4">
-                <div className={styles.imageShadow}>
-                  <Image className={styles.image}
-                      src="/images/other/BlackPanther.jpg"
-                      alt='Header Image'
-                      layout = "responsive"
-                      width={500}
-                      height={500}
-                  />
-                </div>
-                
-                OTHER
-              </Col>  
-            </Link>
-           
-          </Row>
-        </div>
+                  </div>
+                  
+                  OTHER
+                </Col>  
+              </Link>
+            
+            </Row>
+          </div>
 
         </div>
         
         
 
-        <Container className={styles.title} id="contact"  >
-          SHOP ALL STICKERS
+        <Container className={styles.title} id="SHOP ALL">
+          <h1 className={styles.h1}>SHOP ALL STICKERS</h1>
         </Container>
     
-     
-          <Row className='row' >
-              <div className='row post'> 
-                {starWarsPosts.map((post, index) => (
+          <h2 className={styles.h2}>STAR WARS</h2>
+
+          <Row className={styles.post}>
+            <div className='row'>
+              {starWarsPosts.map((post, index) => (
                     <StarWarsPost post={post} key={index}/>
                 ))}
-              </div>
-              
+            </div>
+          </Row>
+
+          <h2 className={styles.h2}>DISNEY</h2>
+
+          <Row className={styles.post}>
+            <div className='row'>
+              {disneyPosts.map((post, index) => (
+                    <DisneyPost post={post} key={index}/>
+                ))}
+            </div>
+          </Row>
+
+          <h2 className={styles.h2}>OTHER</h2>
+
+          <Row className={styles.post}>
+            <div className='row'>
+              {otherPosts.map((post, index) => (
+                    <OtherPost post={post} key={index}/>
+                ))}
+            </div>
           </Row>
        
-       
-
-        <Row className='row' style={{padding:"0rem 5rem", cursor: "pointer"}}>
-          <div className='row'>
-            
-          {disneyPosts.map((post, index) => (
-            
-               <DisneyPost post={post}  key={index}/>
-   
-                ))}
-          </div>
-          
-        </Row>
-
-        <Row className='row' style={{padding:"0px 5rem", cursor: "pointer"}}>
-          <div className='row'>
-            
-          {otherPosts.map((post, index) => (
-            
-              <OtherPost post={post}  key={index}/>
-           
-                  
-                ))}
-          </div>
-          
-        </Row>
-       
-       
-     
-       
-       
-        
-          
          
-        
       </main>
 
       <footer className={styles.footer}>

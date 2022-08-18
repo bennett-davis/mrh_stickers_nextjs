@@ -4,6 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import StarWarsPost from '../components/StarWarsPost'
+import styles from '../styles/Home.module.css'
+
 
 import { Container, Row, Col } from "reactstrap";
 
@@ -21,7 +23,7 @@ export default function Home({posts}) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
           </Head>
            {/* <div>Star Wars</div> */} 
-            <Row className='row' style={{padding:"0px 100px", cursor: "pointer"}}>
+           <Row className={styles.post}>
             <div className='row'>
                 
             {posts.map((post, index) => (
